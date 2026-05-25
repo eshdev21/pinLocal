@@ -11,7 +11,10 @@ PinLocal is a desktop application for local image search, boards management, and
 ## Demo
 Below is a screen recording demonstrating the application in action:
 
-<video src="assets/demo.mp4" width="100%" controls autoplay loop muted></video>
+<video src="https://github.com/eshdev21/pinLocal/raw/main/assets/demo.mp4" width="100%" controls autoplay loop muted></video>
+
+*(If the video doesn't play above, you can [watch it directly here](https://github.com/eshdev21/pinLocal/raw/main/assets/demo.mp4))*
+
 
 ## Tech Stack
 - **Frontend**: React, TypeScript, Tailwind CSS, Lucide icons, Framer Motion, Zustand
