@@ -1,0 +1,9 @@
+pub mod config;
+pub mod indexing_service;
+pub mod sidecar;
+pub mod setup;
+pub mod vector_search;
+pub mod embeddings_store;
+pub mod model_manager;
+pub mod sync_worker;
+pub mod search_orchestrator;

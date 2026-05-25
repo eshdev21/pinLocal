@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* ── Dark mode (default) — warm olive-black, #292A26 family ── */
+  :root,
+  .dark {
+    --background: 72 4% 15%;
+    /* #272824 */
+    --background-subtle: 72 4% 17%;
+    /* #2C2D29 */
+    --foreground: 60 9% 98%;
+    /* #F8F7F2 - Lightened for better contrast */
+
+    --card: 72 4% 17%;
+    --card-foreground: 60 9% 98%;
+
+    --popover: 72 4% 14%;
+    --popover-foreground: 60 9% 98%;
+
+    --primary: 60 9% 98%;
+    --primary-foreground: 72 4% 15%;
+
+    --secondary: 72 4% 21%;
+    /* slightly lighter than bg */
+    --secondary-foreground: 60 6% 85%;
+
+    --muted: 72 4% 20%;
+    --muted-foreground: 60 4% 70%;
+
+    --accent: 72 4% 22%;
+    --accent-foreground: 60 9% 98%;
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 72 4% 24%;
+    --input: 72 4% 24%;
+    --ring: 60 4% 52%;
+    --radius: 0.5rem;
+
+    --sidebar: 72 5% 12%;
+    /* #202118 — slightly darker */
+    --sidebar-border: 72 4% 20%;
+  }
+
+  /* ── Light mode — warm parchment ── */
+  .light {
+    --background: 40 20% 96%;
+    --background-subtle: 40 18% 98%;
+    --foreground: 30 8% 2%;
+    /* Darkened for better contrast */
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 8% 2%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 8% 2%;
+
+    --primary: 30 8% 2%;
+    --primary-foreground: 40 20% 96%;
+
+    --secondary: 40 12% 92%;
+    --secondary-foreground: 30 8% 15%;
+
+    --muted: 40 12% 92%;
+    --muted-foreground: 30 5% 30%;
+
+    --accent: 40 12% 92%;
+    --accent-foreground: 30 8% 2%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 10% 88%;
+    --input: 35 10% 88%;
+    --ring: 30 5% 48%;
+    --radius: 0.5rem;
+
+    --sidebar: 40 18% 94%;
+    --sidebar-border: 35 10% 86%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    outline: none;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-feature-settings: "rlig" 1, "calt" 1, "tnum" 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+@layer components {
+  .nav-item {
+    @apply flex items-center gap-2 px-2.5 py-1.5 text-[12.5px] rounded-md cursor-pointer select-none w-full;
+    @apply text-muted-foreground hover:text-foreground hover:bg-secondary/80;
+    transition: all 120ms ease;
+  }
+
+  .nav-item-active {
+    @apply bg-secondary text-foreground font-medium;
+  }
+
+  .page-header {
+    @apply sticky top-0 z-40 flex items-center gap-3 px-5 h-11 border-b border-border/60 shrink-0;
+    @apply bg-background/95 backdrop-blur-sm;
+  }
+
+  .search-input {
+    @apply bg-secondary/60 hover:bg-secondary border border-transparent focus:border-border/80;
+    @apply rounded-md px-2.5 py-1 text-[12px] outline-none;
+    @apply placeholder:text-muted-foreground/40;
+    @apply text-foreground;
+    transition: all 120ms ease;
+  }
+
+  .sort-group {
+    @apply flex items-center bg-secondary/60 rounded-md p-0.5 gap-0.5;
+  }
+
+  .sort-btn {
+    @apply p-1.5 rounded text-muted-foreground hover:text-foreground transition-colors cursor-pointer;
+  }
+
+  .sort-btn-active {
+    @apply bg-background text-foreground shadow-sm;
+  }
+
+  .relevance-badge {
+    @apply flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-secondary/40 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/50 select-none border border-border/20;
+  }
+
+  .skeleton {
+    @apply bg-secondary/60 animate-pulse rounded-xl;
+  }
+
+  .status-dot {
+    @apply w-1.5 h-1.5 rounded-full flex-shrink-0;
+  }
+
+  /* Settings rows */
+  .setting-row {
+    @apply flex items-center justify-between py-2.5 border-b border-border/40 last:border-0;
+  }
+
+  .setting-label {
+    @apply text-[12.5px] font-medium text-foreground;
+  }
+
+  .setting-desc {
+    @apply text-[11px] text-muted-foreground/60 mt-0.5;
+  }
+
+  /* Toggle switch */
+  .toggle {
+    @apply relative w-9 h-5 rounded-full border transition-all duration-200 flex-shrink-0 cursor-pointer;
+  }
+
+  .toggle-on {
+    @apply bg-blue-600 border-blue-500;
+  }
+
+  .toggle-off {
+    @apply bg-secondary border-border;
+  }
+
+  .toggle-thumb {
+    @apply absolute top-[1px] w-4 h-4 rounded-full bg-white shadow-sm transition-all duration-200;
+  }
+
+  .toggle-thumb-on {
+    @apply left-[17px];
+  }
+
+  .toggle-thumb-off {
+    @apply left-[2px];
+  }
+
+  /* Section heading in settings */
+  .settings-section-title {
+    @apply text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/50 mb-3;
+  }
+}
+
+@keyframes loader-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 180ms ease both;
+}
+
+.animate-fade-in {
+  animation: fade-in 150ms ease both;
+}
+
+.skeleton {
+  @apply bg-secondary/40 rounded-xl overflow-hidden relative;
+  background-image: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.03) 50%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.light .skeleton {
+  background-image: linear-gradient(90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.03) 50%,
+      transparent 100%);
+}
+
+.loader-bar {
+  @apply relative overflow-hidden bg-border/30 rounded-full;
+}
+
+.loader-bar::after {
+  content: '';
+  @apply absolute inset-0 bg-muted-foreground/40 rounded-full;
+  animation: loader-slide 1.4s ease-in-out infinite;
+}
