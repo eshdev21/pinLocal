@@ -63,4 +63,4 @@ src-tauri/dump.rdb
 # Bun
 bun.lockb
 ignore/
-
+scratch/

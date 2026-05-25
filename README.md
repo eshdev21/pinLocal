@@ -9,11 +9,11 @@ PinLocal is a desktop application for local image search, boards management, and
 - **Workspace Tracker**: Keep track of local folders and sync changes in real time.
 
 ## Demo
-Below is a screen recording demonstrating the application in action:
+Below is a demonstration of the application in action:
 
-<video src="https://github.com/eshdev21/pinLocal/raw/main/assets/demo.mp4" width="100%" controls autoplay loop muted></video>
+![PinLocal Demo](assets/demo.webp)
 
-*(If the video doesn't play above, you can [watch it directly here](https://github.com/eshdev21/pinLocal/raw/main/assets/demo.mp4))*
+*(If the image doesn't display or animate, you can [watch the MP4 video directly here](assets/demo.mp4))*
 
 
 ## Tech Stack
