@@ -13,7 +13,6 @@ Below is a demonstration of the application in action:
 
 ![PinLocal Demo](assets/demo.webp)
 
-*(If the image doesn't display or animate, you can [watch the MP4 video directly here](assets/demo.mp4))*
 
 
 ## Tech Stack
